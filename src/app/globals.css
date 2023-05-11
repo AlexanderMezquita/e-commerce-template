@@ -4,13 +4,15 @@
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap');
 
 
+
+
 * {
      font-family: 'EB Garamond','serif';
      
 }
 
 main {
-     @apply max-w-screen-2xl mr-auto ml-auto
+     @apply max-w-screen-2xl mr-auto ml-auto bg-slate-300 h-screen
 
 }
 
@@ -22,9 +24,51 @@ li {
      @apply flex justify-center items-center
 }
 
+@media (max-width: 1400px) {
+
+     #Purpose {
+          display: none
+     }
+}
+
+@media (max-width: 1320px) {
+
+     #Fierce {
+          display: none
+     }
+}
+
+@media (max-width: 1240px) {
+
+     #Sale {
+          display: none
+     }
+}
+
+@media (max-width: 1140px) {
+
+     #Jeans {
+          display: none
+     }
+}
+
+@media (max-width: 1100px) {
+
+     #Active {
+          display: none
+     }
+}
 
 .navBar > div > li > a {
      @apply text-primary font-bold hover:border-b-4 border-primary py-5 px-2
 }
 
+.categories >  ul > li > a {
+     @apply border-primary hover:border-b-2 p-0
+
+}
+
+h4 {
+     @apply text-grey-custom font-semibold
+}
 

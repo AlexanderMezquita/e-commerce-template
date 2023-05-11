@@ -2,42 +2,12 @@
 
 import Image from "next/image";
 import React, { useState } from "react";
+import Offer from "./offer";
+import PopOver from "./popOver";
+import categories from "./categories";
+
 export default function NavBar() {
-  const [popOver, setPopOver] = useState(true);
-  const categories = [
-    `Men's`,
-    `Women's`,
-    `Jean`,
-    `Fierce`,
-    "Active",
-    "Sale",
-    "Purpose",
-  ];
-
-  const PopOver = () => {
-    return <div className="bg-white h-96 w-96">hello</div>;
-  };
-
-  const Offer = () => {
-    return (
-      <article className=" w-full bg-primary h-12  px-4 text-white">
-        <div className=" max-w-screen-2xl flex items-center space-x-10">
-          <p>Limited Time: Up to 25% Off select styles</p>
-          <ul className="flex space-x-5">
-            <li>
-              <a>See Details</a>
-            </li>
-            <li>
-              <a>See Details</a>
-            </li>
-            <li>
-              <a>See Details</a>
-            </li>
-          </ul>
-        </div>
-      </article>
-    );
-  };
+  const [popOver, setPopOver] = useState("Men's");
 
   return (
     <>
@@ -52,14 +22,15 @@ export default function NavBar() {
             </li>
           </div>
           <li className="mr-5 hidden md:block">
-            <i className="fi fi-ts-circle-user"></i>
             <p>Sign in or Create Account</p>
           </li>
         </div>
       </ul>
-
       <nav>
-        <ul className="flex justify-between navBar max-w-screen-2xl h-20 mr-auto ml-auto">
+        <ul className="flex justify-between items-center px-4 navBar max-w-screen-2xl h-20 mr-auto ml-auto">
+          <div className=" md:hidden">
+            <p>Icon</p>
+          </div>
           <div className=" ml-2 flex items-center space-x-8 ">
             <li>
               <Image
@@ -70,20 +41,32 @@ export default function NavBar() {
                 priority
                 placeholder="blur"
                 blurDataURL={"/logo.png"}
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               />
             </li>
             {categories.map((item) => {
               return (
-                <li onMouseEnter={() => console.log("enter")} key={item}>
-                  <a>{item}</a>
+                <li
+                  onMouseEnter={() => setPopOver(item.name)}
+                  onMouseLeave={() => setPopOver("none")}
+                  key={item.name}
+                  className="relative hidden md:block"
+                  id={`${item.name}`}
+                >
+                  <a>{item.name}</a>
+                  <PopOver
+                    categoryToOpen={item.name}
+                    popOver={popOver}
+                    setPopOver={setPopOver}
+                  />
                 </li>
               );
             })}
           </div>
-          <div className=" mr-2">
+          <div>
             <ul className="flex items-center h-full space-x-5">
               <li>Search</li>
-              <li>Search</li>
+              <li className="hidden md:block">Search</li>
               <li>Search</li>
             </ul>
           </div>
