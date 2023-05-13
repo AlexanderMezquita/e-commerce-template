@@ -1,4 +1,8 @@
- const categories = [
+ interface categoryItem {
+  name: string;
+ }
+ 
+ const categories: categoryItem[] = [
     { name: `Men's` },
     { name: `Women's` },
     { name: `Jeans` },

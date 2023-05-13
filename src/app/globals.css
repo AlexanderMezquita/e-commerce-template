@@ -3,17 +3,13 @@
 @tailwind utilities;
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap');
 
-
-
-
 * {
-     font-family: 'EB Garamond','serif';
+     font-family: 'EB Garamond',serif;
      
 }
 
 main {
      @apply max-w-screen-2xl mr-auto ml-auto bg-slate-300 h-screen
-
 }
 
 a {
