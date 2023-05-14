@@ -1,4 +1,3 @@
-import Head from "next/head";
 import "./globals.css";
 import "@flaticon/flaticon-uicons/css/all/all.css";
 

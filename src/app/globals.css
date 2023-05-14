@@ -2,9 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 @import url("https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap");
-/* @import url("https://cdn-uicons.flaticon.com/uicons-solid-rounded/css/uicons-solid-rounded.css"); */
-/* @import '' */
-/* @import url("https://cdn-uicons.flaticon.com/uicons-solid-rounded/css/uicons-solid-rounded.css"); */
 * {
   font-family: "EB Garamond", serif;
 }
