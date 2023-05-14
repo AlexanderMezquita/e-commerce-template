@@ -5,7 +5,10 @@ export default function Home() {
   return (
     <>
       <NavBar />
-      <main></main>
+      <main>
+        <h2>Hello</h2>
+        <i className="fi fi-brands-instagram"></i>
+      </main>
     </>
   );
 }
