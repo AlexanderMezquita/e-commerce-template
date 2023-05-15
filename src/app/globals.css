@@ -8,12 +8,13 @@
      
 }
 
+
 i {
-     @apply text-xl flex items-center
+     @apply text-xl flex items-center cursor-pointer
 }
 
 main {
-     @apply max-w-screen-2xl mr-auto ml-auto bg-slate-300 h-screen
+     @apply max-w-screen-2xl mr-auto ml-auto bg-background h-screen
 }
 
 a {
@@ -59,6 +60,13 @@ a {
      }
 }
 
+@media (max-width: 320px) {
+
+     #sideBarContent {
+         width: 100%;
+     }
+}
+
 .navBar > div > li > a {
      @apply text-primary font-bold hover:border-b-4 border-primary py-5 px-2
 }
@@ -77,3 +85,4 @@ h4 {
     height: 90;
 
 }
+

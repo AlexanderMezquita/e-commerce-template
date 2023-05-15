@@ -1,15 +1,21 @@
 "use client";
 
 import Image from "next/image";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, FC } from "react";
 import Offer from "./offer";
 import PopOver from "./popOver";
 import NavHeader from "./navHeader";
 import categories from "./categories";
+import LeftSideBar from "../sidebar/leftSidebar";
 
-export default function NavBar() {
+type NavBarProps = {
+  toggleLeftBar: Function;
+  toggleRightBar: Function;
+};
+
+const NavBar: FC<NavBarProps> = ({ toggleLeftBar, toggleRightBar }) => {
   const topNavHeight = 48;
-  const [popOver, setPopOver] = useState("none");
+  const [categorySelected, setCategorySelected] = useState("none");
   const [showNav, setShowNav] = useState(false);
 
   const controlNavBar = () => {
@@ -34,9 +40,14 @@ export default function NavBar() {
         aria-label="primary"
         className={`${showNav && "sticky top-0"}  bg-white w-full`}
       >
-        <ul className="flex justify-between items-center px-1 md:px-4 navBar max-w-screen-2xl h-20 mr-auto ml-auto">
+        <ul className="flex justify-between items-center  navBar max-w-screen-2xl h-20 mx-auto px-4">
           <div className=" md:hidden flex items-center h-full space-x-5 flex-grow basis-0">
-            <li>Search</li>
+            <li>
+              <i
+                className="fi fi-rr-menu-burger"
+                onClick={() => toggleLeftBar()}
+              ></i>
+            </li>
           </div>
           <div className=" flex items-center">
             <li>
@@ -50,8 +61,8 @@ export default function NavBar() {
             {categories.map((item) => {
               return (
                 <li
-                  onMouseEnter={() => setPopOver(item.name)}
-                  onMouseLeave={() => setPopOver("none")}
+                  onMouseEnter={() => setCategorySelected(item.name)}
+                  onMouseLeave={() => setCategorySelected("none")}
                   key={item.name}
                   className="relative hidden px-5 md:block"
                   id={`${item.name}`}
@@ -59,17 +70,20 @@ export default function NavBar() {
                   <a>{item.name}</a>
                   <PopOver
                     categoryToOpen={item.name}
-                    popOver={popOver}
-                    setPopOver={setPopOver}
+                    categorySelected={categorySelected}
+                    setCategorySelected={setCategorySelected}
                   />
                 </li>
               );
             })}
           </div>
 
-          <div className="flex items-center h-full space-x-2 md:space-x-5 justify-end flex-grow basis-0">
+          <div className="flex items-center h-full space-x-7 md:space-x-10 justify-end flex-grow basis-0">
             <li>
-              <i className="fi fi-rs-search"></i>
+              <i
+                className="fi fi-rs-search"
+                onClick={() => toggleRightBar()}
+              ></i>
             </li>
             <li className="hidden md:block">Search</li>
             <li>
@@ -78,7 +92,8 @@ export default function NavBar() {
           </div>
         </ul>
       </nav>
-      <Offer />
     </>
   );
-}
+};
+
+export default NavBar;

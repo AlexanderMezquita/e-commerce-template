@@ -2,18 +2,22 @@ import { FC } from "react";
 
 type PopOverProps = {
   categoryToOpen: string;
-  popOver: string;
-  setPopOver: Function;
+  categorySelected: string;
+  setCategorySelected: Function;
 };
 
-const PopOver: FC<PopOverProps> = ({ categoryToOpen, popOver, setPopOver }) => {
+const PopOver: FC<PopOverProps> = ({
+  categoryToOpen,
+  categorySelected,
+  setCategorySelected,
+}) => {
   return (
     <aside
       className={`${
-        popOver === categoryToOpen ? "" : "hidden"
+        categorySelected === categoryToOpen ? "" : "hidden"
       }  absolute top-11  bg-white  text-white px-20 pb-16 pt-10 flex justify-start
        space-x-48`}
-      onMouseLeave={() => setPopOver("none")}
+      onMouseLeave={() => setCategorySelected("none")}
     >
       <div className=" categories [&>h4]:text-primary">
         <h4 className="mb-3 ">Categories</h4>
