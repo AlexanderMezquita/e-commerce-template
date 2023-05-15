@@ -12,7 +12,6 @@ i {
 }
 
 main {
-<<<<<<< HEAD
      @apply max-w-screen-2xl mr-auto ml-auto bg-background h-screen
 }
 
@@ -23,18 +22,6 @@ a {
 /* li {
      @apply flex justify-center items-center
 } */
-=======
-  @apply max-w-screen-2xl mr-auto ml-auto bg-slate-300 h-screen;
-}
-
-a {
-  @apply cursor-pointer p-3;
-}
-
-li {
-  @apply flex justify-center items-center;
-}
->>>>>>> 52a0baded9d995fc007852aa4de725ddd95f1e88
 
 @media (max-width: 1400px) {
   #Purpose {
@@ -77,20 +64,14 @@ li {
   @apply text-primary font-bold hover:border-b-4 border-primary py-5 px-2;
 }
 
-<<<<<<< HEAD
 .categories >  ul > li > a {
      @apply border-primary hover:border-b-2 text-grey-custom
 
-=======
-.categories > ul > li > a {
-  @apply border-primary hover:border-b-2 p-0;
->>>>>>> 52a0baded9d995fc007852aa4de725ddd95f1e88
 }
 
 h4 {
   @apply text-grey-custom font-semibold;
 }
-<<<<<<< HEAD
 
 .logo{
     width: 90;
@@ -98,5 +79,3 @@ h4 {
 
 }
 
-=======
->>>>>>> 52a0baded9d995fc007852aa4de725ddd95f1e88
