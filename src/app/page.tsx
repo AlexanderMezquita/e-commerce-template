@@ -20,6 +20,7 @@ export default function Home() {
 
   return (
     <>
+<<<<<<< HEAD
       <NavBar toggleLeftBar={toggleLeftBar} toggleRightBar={toggleRightBar} />
       <BurgerMenu openLeftBar={openLeftBar} toggleLeftBar={toggleLeftBar} />
       <Backdrop
@@ -31,6 +32,14 @@ export default function Home() {
       <SearchMenu openRightBar={openRightBar} toggleRightBar={toggleRightBar} />
       <Offer />
       <main></main>
+=======
+      <NavBar />
+      <main>
+        <h2>Hello</h2>
+        <i className="fi fi-brands-instagram"></i>
+        <i className="fi fi-sr-home"></i>
+      </main>
+>>>>>>> 52a0baded9d995fc007852aa4de725ddd95f1e88
     </>
   );
 }
