@@ -2,7 +2,7 @@
 
 import NavBar from "@/components/navbar";
 import Offer from "@/components/navbar/offer";
-import Backdrop from "@/components/sidebar/backdrop";
+import Backdrop from "@/components/globals/backdrop";
 import BurgerMenu from "@/components/sidebar/burgerMenu";
 import { useState } from "react";
 import SearchMenu from "@/components/sidebar/searchMenu";
