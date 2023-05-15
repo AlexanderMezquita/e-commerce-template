@@ -1,6 +1,7 @@
 import Head from "next/head";
 import "./globals.css";
 import { Inter } from "next/font/google";
+import "@flaticon/flaticon-uicons/css/all/all.css";
 
 const inter = Inter({ subsets: ["latin"] });
 

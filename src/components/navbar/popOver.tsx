@@ -11,12 +11,13 @@ const PopOver: FC<PopOverProps> = ({ categoryToOpen, popOver, setPopOver }) => {
     <aside
       className={`${
         popOver === categoryToOpen ? "" : "hidden"
-      }  absolute top-11  bg-white  text-white px-20 py-16 flex space-x-48`}
+      }  absolute top-11  bg-white  text-white px-20 pb-16 pt-10 flex justify-start
+       space-x-48`}
       onMouseLeave={() => setPopOver("none")}
     >
-      <div className="text-black categories">
-        <h4 className="mb-5">Categories</h4>
-        <ul className=" mr-8 space-y-4 ">
+      <div className=" categories [&>h4]:text-primary">
+        <h4 className="mb-3 ">Categories</h4>
+        <ul className=" space-y-4">
           <li>
             <a>Test</a>
           </li>
@@ -34,18 +35,9 @@ const PopOver: FC<PopOverProps> = ({ categoryToOpen, popOver, setPopOver }) => {
           </li>
         </ul>
       </div>
-      <div className="text-black categories">
+      <div className=" categories">
         <h4 className="mb-5">Categories</h4>
-        <ul className=" mr-8 space-y-4 ">
-          <li>
-            <a>Test</a>
-          </li>
-          <li>
-            <a>Test</a>
-          </li>
-          <li>
-            <a>Test</a>
-          </li>
+        <ul className="space-y-4 ">
           <li>
             <a>Test</a>
           </li>

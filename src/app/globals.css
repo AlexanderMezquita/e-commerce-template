@@ -8,17 +8,21 @@
      
 }
 
+i {
+     @apply text-xl flex items-center
+}
+
 main {
      @apply max-w-screen-2xl mr-auto ml-auto bg-slate-300 h-screen
 }
 
 a {
-     @apply cursor-pointer p-3
+     @apply cursor-pointer
 }
 
-li {
+/* li {
      @apply flex justify-center items-center
-}
+} */
 
 @media (max-width: 1400px) {
 
@@ -60,7 +64,7 @@ li {
 }
 
 .categories >  ul > li > a {
-     @apply border-primary hover:border-b-2 p-0
+     @apply border-primary hover:border-b-2 text-grey-custom
 
 }
 
@@ -68,3 +72,8 @@ h4 {
      @apply text-grey-custom font-semibold
 }
 
+.logo{
+    width: 90;
+    height: 90;
+
+}
