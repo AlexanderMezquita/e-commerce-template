@@ -2,22 +2,31 @@
 @tailwind components;
 @tailwind utilities;
 @import url("https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap");
-* {
+@import url('https://fonts.googleapis.com/css2?family=Gothic+A1&display=swap');
+.garamond {
   font-family: "EB Garamond", serif;
 }
 
+* {
+  font-family: 'Gothic A1', sans-serif;
+}
 
 i {
      @apply text-xl flex items-center cursor-pointer
 }
 
 main {
-     @apply max-w-screen-2xl mr-auto ml-auto bg-background h-screen
+     @apply max-w-screen-2xl mx-auto bg-background h-screen
 }
 
 a {
-     @apply cursor-pointer
+     @apply cursor-pointer 
 }
+
+
+ h1, h2, h3, h4, h5 {
+   @apply text-primary 
+ }
 
 /* li {
      @apply flex justify-center items-center

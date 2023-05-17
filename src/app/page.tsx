@@ -6,6 +6,7 @@ import Backdrop from "@/components/globals/backdrop";
 import BurgerMenu from "@/components/sidebar/burgerMenu";
 import { useState } from "react";
 import SearchMenu from "@/components/sidebar/searchMenu";
+import ListBackDrop from "@/components/globals/listBrackdrop";
 
 export default function Home() {
   const [openLeftBar, setOpenLeftBar] = useState(false);
@@ -22,13 +23,13 @@ export default function Home() {
     <>
       <NavBar toggleLeftBar={toggleLeftBar} toggleRightBar={toggleRightBar} />
       <BurgerMenu openLeftBar={openLeftBar} toggleLeftBar={toggleLeftBar} />
+      <SearchMenu openRightBar={openRightBar} toggleRightBar={toggleRightBar} />
       <Backdrop
         openLeftBar={openLeftBar}
         toggleLeftBar={toggleLeftBar}
         openRightBar={openRightBar}
         toggleRightBar={toggleRightBar}
       />
-      <SearchMenu openRightBar={openRightBar} toggleRightBar={toggleRightBar} />
       <Offer />
       <main></main>
     </>

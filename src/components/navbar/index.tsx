@@ -7,6 +7,7 @@ import PopOver from "./popOver";
 import NavHeader from "./navHeader";
 import categories from "./categories";
 import LeftSideBar from "../sidebar/leftSidebar";
+import ListBackDrop from "../globals/listBrackdrop";
 
 type NavBarProps = {
   toggleLeftBar: Function;
@@ -15,8 +16,8 @@ type NavBarProps = {
 
 const NavBar: FC<NavBarProps> = ({ toggleLeftBar, toggleRightBar }) => {
   const topNavHeight = 48;
-  const [categorySelected, setCategorySelected] = useState("none");
   const [showNav, setShowNav] = useState(false);
+  const [categorySelected, setCategorySelected] = useState("none");
 
   const controlNavBar = () => {
     if (window.scrollY > topNavHeight) {
@@ -38,9 +39,9 @@ const NavBar: FC<NavBarProps> = ({ toggleLeftBar, toggleRightBar }) => {
       <NavHeader topNavHeight={topNavHeight} />
       <nav
         aria-label="primary"
-        className={`${showNav && "sticky top-0"}  bg-white w-full`}
+        className={`${showNav && "sticky "} top-0 bg-white w-full relative`}
       >
-        <ul className="flex justify-between items-center  navBar max-w-screen-2xl h-20 mx-auto px-4">
+        <ul className="flex justify-between items-center  navBar max-w-screen-2xl h-16 mx-auto px-4">
           <div className=" md:hidden flex items-center h-full space-x-5 flex-grow basis-0">
             <li>
               <i
@@ -91,6 +92,7 @@ const NavBar: FC<NavBarProps> = ({ toggleLeftBar, toggleRightBar }) => {
             </li>
           </div>
         </ul>
+        <ListBackDrop open={categorySelected} />
       </nav>
     </>
   );
