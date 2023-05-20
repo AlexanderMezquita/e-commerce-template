@@ -15,9 +15,7 @@ i {
      @apply text-xl flex items-center cursor-pointer
 }
 
-main {
-     @apply max-w-screen-2xl mx-auto bg-background h-screen
-}
+
 
 a {
      @apply cursor-pointer 

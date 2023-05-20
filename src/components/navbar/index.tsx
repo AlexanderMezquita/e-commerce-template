@@ -1,53 +1,25 @@
 "use client";
 
-import Image from "next/image";
-import React, { useState, useEffect, FC } from "react";
-import Offer from "./offer";
+import React, { useState } from "react";
 import PopOver from "./popOver";
 import NavHeader from "./navHeader";
 import categories from "./categories";
-import LeftSideBar from "../sidebar/leftSidebar";
 import ListBackDrop from "../globals/listBrackdrop";
+import Search from "./search";
+import Burguer from "./burguer";
 
-type NavBarProps = {
-  toggleLeftBar: Function;
-  toggleRightBar: Function;
-};
-
-const NavBar: FC<NavBarProps> = ({ toggleLeftBar, toggleRightBar }) => {
-  const topNavHeight = 48;
-  const [showNav, setShowNav] = useState(false);
+const NavBar = () => {
+  const topNavHeight = 48 as number;
   const [categorySelected, setCategorySelected] = useState("none");
-
-  const controlNavBar = () => {
-    if (window.scrollY > topNavHeight) {
-      setShowNav(true);
-    } else {
-      setShowNav(false);
-    }
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", controlNavBar);
-    return () => {
-      window.removeEventListener("scroll", controlNavBar);
-    };
-  }, []);
 
   return (
     <>
       <NavHeader topNavHeight={topNavHeight} />
-      <nav
-        aria-label="primary"
-        className={`${showNav && "sticky "} top-0 bg-white w-full relative`}
-      >
+      <div aria-label="primary" className=" sticky top-0 bg-white w-full  ">
         <ul className="flex justify-between items-center  navBar max-w-screen-2xl h-16 mx-auto px-4">
           <div className=" md:hidden flex items-center h-full space-x-5 flex-grow basis-0">
             <li>
-              <i
-                className="fi fi-rr-menu-burger"
-                onClick={() => toggleLeftBar()}
-              ></i>
+              <Burguer />
             </li>
           </div>
           <div className=" flex items-center">
@@ -81,10 +53,7 @@ const NavBar: FC<NavBarProps> = ({ toggleLeftBar, toggleRightBar }) => {
 
           <div className="flex items-center h-full space-x-7 md:space-x-10 justify-end flex-grow basis-0">
             <li>
-              <i
-                className="fi fi-rs-search"
-                onClick={() => toggleRightBar()}
-              ></i>
+              <Search />
             </li>
             <li className="hidden md:block">Search</li>
             <li>
@@ -93,7 +62,7 @@ const NavBar: FC<NavBarProps> = ({ toggleLeftBar, toggleRightBar }) => {
           </div>
         </ul>
         <ListBackDrop open={categorySelected} />
-      </nav>
+      </div>
     </>
   );
 };

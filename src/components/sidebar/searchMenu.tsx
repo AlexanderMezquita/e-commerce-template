@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import SearchInput from "../globals/searchInput";
-import RightSideBar from "./rightSidebar";
+import SideBar from "./sidebar";
 
 type SearchMenuProps = {
   openRightBar: boolean;
@@ -9,13 +9,17 @@ type SearchMenuProps = {
 
 const SearchMenu: FC<SearchMenuProps> = ({ openRightBar, toggleRightBar }) => {
   return (
-    <RightSideBar open={openRightBar}>
+    <SideBar
+      open={openRightBar}
+      position={"right-0 "}
+      translate="translate-x-full"
+    >
       <div className="bg-background flex p-5 justify-between items-center mb-5">
         <h3>Search</h3>
 
         <i
           className="fi fi-rs-cross text-sm "
-          onClick={() => toggleRightBar()}
+          onClick={() => toggleRightBar(false)}
         ></i>
       </div>
       <SearchInput />
@@ -29,7 +33,7 @@ const SearchMenu: FC<SearchMenuProps> = ({ openRightBar, toggleRightBar }) => {
           <li>Golf</li>
         </ul>
       </div>
-    </RightSideBar>
+    </SideBar>
   );
 };
 

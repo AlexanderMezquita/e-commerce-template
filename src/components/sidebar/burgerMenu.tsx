@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import LeftSideBar from "./leftSidebar";
+import SideBar from "./sidebar";
 import SearchInput from "../globals/searchInput";
 
 type BurgerMenuProps = {
@@ -9,7 +9,11 @@ type BurgerMenuProps = {
 
 const BurgerMenu: FC<BurgerMenuProps> = ({ openLeftBar, toggleLeftBar }) => {
   return (
-    <LeftSideBar open={openLeftBar}>
+    <SideBar
+      open={openLeftBar}
+      position={"left-0"}
+      translate="-translate-x-full"
+    >
       <div className="p-3">
         <i
           className="fi fi-rs-cross text-sm w-full flex justify-end items-center py-3 mb-5"
@@ -17,7 +21,7 @@ const BurgerMenu: FC<BurgerMenuProps> = ({ openLeftBar, toggleLeftBar }) => {
         ></i>
         <SearchInput />
       </div>
-    </LeftSideBar>
+    </SideBar>
   );
 };
 
