@@ -20,7 +20,7 @@ const SideBar: FC<SidebarProps> = ({ open, translate, position, children }) => {
     <div
       className={`${
         open ? "" : translate
-      } z-20 fixed bg-white ${position} top-0  bottom-0 w-80  transition-all duration-300 overflow-y-auto `}
+      } z-20 fixed bg-white ${position} top-0  bottom-0 w-[400px] transition-all duration-300 overflow-y-auto `}
       id="sideBarContent"
     >
       {children}

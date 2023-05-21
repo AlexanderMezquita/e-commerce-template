@@ -7,6 +7,7 @@ import categories from "./categories";
 import ListBackDrop from "../globals/listBrackdrop";
 import Search from "./search";
 import Burguer from "./burguer";
+import ShoppingCart from "./shoppingCart";
 
 const NavBar = () => {
   const topNavHeight = 48 as number;
@@ -15,7 +16,7 @@ const NavBar = () => {
   return (
     <>
       <NavHeader topNavHeight={topNavHeight} />
-      <div aria-label="primary" className=" sticky top-0 bg-white w-full  ">
+      <nav aria-label="primary" className=" sticky top-0 bg-white w-full  ">
         <ul className="flex justify-between items-center  navBar max-w-screen-2xl h-16 mx-auto px-4">
           <div className=" md:hidden flex items-center h-full space-x-5 flex-grow basis-0">
             <li>
@@ -55,14 +56,20 @@ const NavBar = () => {
             <li>
               <Search />
             </li>
-            <li className="hidden md:block">Search</li>
+            <li className="hidden md:block">
+              <img
+                alt="Canada Flag"
+                src="/assets/canada.svg"
+                className="w-7 cursor-pointer"
+              />
+            </li>
             <li>
-              <i className="fi fi-rr-shopping-bag"></i>
+              <ShoppingCart />
             </li>
           </div>
         </ul>
         <ListBackDrop open={categorySelected} />
-      </div>
+      </nav>
     </>
   );
 };

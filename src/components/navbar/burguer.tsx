@@ -8,7 +8,7 @@ const Burguer = () => {
   return (
     <>
       <i className="fi fi-rr-menu-burger" onClick={() => setOpenBar(true)}></i>
-      <BurgerMenu openLeftBar={openBar} toggleLeftBar={setOpenBar} />
+      <BurgerMenu open={openBar} toggle={setOpenBar} />
       <BackDrop open={openBar} toggleBar={setOpenBar} />
     </>
   );

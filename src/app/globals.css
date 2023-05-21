@@ -15,7 +15,9 @@ i {
      @apply text-xl flex items-center cursor-pointer
 }
 
-
+button {
+  @apply bg-primary hover:bg-primary/90 capitalize
+}
 
 a {
      @apply cursor-pointer 
@@ -23,7 +25,7 @@ a {
 
 
  h1, h2, h3, h4, h5 {
-   @apply text-primary 
+   @apply text-primary font-bold
  }
 
 /* li {
@@ -60,8 +62,7 @@ a {
   }
 }
 
-@media (max-width: 320px) {
-
+@media (max-width: 400px) {
      #sideBarContent {
          width: 100%;
      }

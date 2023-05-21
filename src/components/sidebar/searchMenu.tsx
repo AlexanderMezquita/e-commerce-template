@@ -3,25 +3,21 @@ import SearchInput from "../globals/searchInput";
 import SideBar from "./sidebar";
 
 type SearchMenuProps = {
-  openRightBar: boolean;
-  toggleRightBar: Function;
+  open: boolean;
+  toggle: Function;
 };
 
-const SearchMenu: FC<SearchMenuProps> = ({ openRightBar, toggleRightBar }) => {
+const SearchMenu: FC<SearchMenuProps> = ({ open, toggle }) => {
   return (
-    <SideBar
-      open={openRightBar}
-      position={"right-0 "}
-      translate="translate-x-full"
-    >
-      <div className="bg-background flex p-5 justify-between items-center mb-5">
+    <SideBar open={open} position={"right-0 "} translate="translate-x-full">
+      <header className="bg-background flex p-5 justify-between items-center mb-5">
         <h3>Search</h3>
 
         <i
           className="fi fi-rs-cross text-sm "
-          onClick={() => toggleRightBar(false)}
+          onClick={() => toggle(false)}
         ></i>
-      </div>
+      </header>
       <SearchInput />
       <div className=" p-5">
         <h1 className="mb-4 font-bold">Popular searches</h1>
