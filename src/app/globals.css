@@ -12,11 +12,11 @@
 }
 
 i {
-     @apply text-xl flex items-center cursor-pointer
+     @apply text-xl flex items-center cursor-pointer p-3 hover:text-primary/70
 }
 
 button {
-  @apply bg-primary hover:bg-primary/90 capitalize
+  @apply bg-primary hover:bg-primary/90 capitalize transition-all duration-300
 }
 
 a {

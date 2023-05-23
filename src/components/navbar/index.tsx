@@ -17,7 +17,7 @@ const NavBar = () => {
     <>
       <NavHeader topNavHeight={topNavHeight} />
       <nav aria-label="primary" className=" sticky top-0 bg-white w-full  ">
-        <ul className="flex justify-between items-center  navBar max-w-screen-2xl h-16 mx-auto px-4">
+        <ul className="flex justify-between items-center navBar max-w-screen-2xl h-16 mx-auto md:pl-4">
           <div className=" md:hidden flex items-center h-full space-x-5 flex-grow basis-0">
             <li>
               <Burguer />
@@ -52,7 +52,7 @@ const NavBar = () => {
             })}
           </div>
 
-          <div className="flex items-center h-full space-x-7 md:space-x-10 justify-end flex-grow basis-0">
+          <div className="flex items-center h-full  md:space-x-10 justify-end flex-grow basis-0">
             <li>
               <Search />
             </li>
