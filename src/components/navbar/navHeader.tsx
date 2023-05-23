@@ -21,8 +21,8 @@ const NavHeader: FC<NavHeaderProps> = ({ topNavHeight }) => {
               <a className="p-3 garamond"> abercrombie kids</a>
             </li>
           </ul>
-          <li className="mr-5 md:flex hidden items-center space-x-2 ">
-            <i className="fi fi-rs-circle-user"></i>
+          <li className="mr-5 md:flex hidden items-center font-bold text-sm space-x-2 cursor-pointer hover:text-primary/70 ">
+            <i className="fi fi-rs-circle-user text-sm"></i>
             <p>Sign in or Create Account</p>
           </li>
         </ul>

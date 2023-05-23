@@ -14,7 +14,7 @@ const Footer = () => {
             <a className=" text-neutral-500 underline">See all Offer Details</a>
           </p>
         </div>
-        <div className="p-5 pb-32 hidden md:block">
+        <div className="p-5 pb-32 hidden lg:block">
           <div className=" justify-around flex [&>ul]:space-y-4 space-x-10">
             <ul>
               <li>
@@ -87,7 +87,7 @@ const Footer = () => {
                 </li>
               </ul>
             </div>
-            <ul className="[&>li]:flex [&>li]:items-center [&>li>a]:text-[12px]">
+            <ul className="[&>li]:flex [&>li]:items-center [&>li>a]:text-[12px] [&>li>a]:underline">
               <li>
                 <i className="fi fi-rr-gift-card"></i>
                 <a href="#">Gift Card</a>
