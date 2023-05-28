@@ -8,15 +8,18 @@ import ListBackDrop from "../globals/listBrackdrop";
 import Search from "./search";
 import Burguer from "./burguer";
 import ShoppingCart from "./shoppingCart";
+import Image from "next/image";
 
 const NavBar = () => {
-  const topNavHeight = 48 as number;
   const [categorySelected, setCategorySelected] = useState("none");
 
   return (
     <>
-      <NavHeader topNavHeight={topNavHeight} />
-      <nav aria-label="primary" className=" sticky top-0 bg-white w-full  ">
+      <NavHeader />
+      <nav
+        aria-label="primary"
+        className=" sticky top-0 bg-white w-full z-10  "
+      >
         <ul className="flex justify-between items-center navBar max-w-screen-2xl h-16 mx-auto md:pl-4">
           <div className=" md:hidden flex items-center h-full space-x-5 flex-grow basis-0">
             <li>
@@ -24,9 +27,12 @@ const NavBar = () => {
             </li>
           </div>
           <div className=" flex items-center">
-            <li>
-              <img
-                className="w-40 md:w-48"
+            <li className="w-40 md:w-48 h-10 relative">
+              <Image
+                // className="w-40 md:w-48"
+                // width={300}
+                // height={150}
+                fill={true}
                 alt="logo"
                 src="/logo.png"
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"

@@ -10,8 +10,18 @@
 
 * {
   font-family: 'Gothic A1', sans-serif;
-  letter-spacing: 1px;
-  font-stretch: condensed;
+  /* letter-spacing: 1px; */
+  /* font-stretch: condensed; */
+  font-size: 0.8;
+    font-stretch: 100%;
+    font-weight: 400;
+    letter-spacing: .6px;
+    line-height: 1.5384615385;
+    text-transform: none;
+}
+
+main {
+  @apply min-h-screen
 }
 
 i {
@@ -72,7 +82,7 @@ a {
 }
 
 .navBar > div > li > a {
-  @apply text-primary font-bold hover:border-b-4 border-primary py-5 px-2;
+  @apply text-primary font-bold hover:border-b-4 border-primary py-5;
 }
 
 .categories >  ul > li > a {
