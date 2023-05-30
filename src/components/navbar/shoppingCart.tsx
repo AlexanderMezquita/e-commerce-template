@@ -9,7 +9,7 @@ const ShoppingCart = () => {
     <>
       <i className="fi fi-rr-shopping-bag" onClick={() => setOpenBar(true)}></i>
       <ShoppingCartMenu open={openBar} toggle={setOpenBar} />
-      <BackDrop open={openBar} toggleBar={setOpenBar} />
+      <BackDrop open={openBar} toggle={setOpenBar} />
     </>
   );
 };

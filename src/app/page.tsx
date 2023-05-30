@@ -1,5 +1,6 @@
 import ButtonTrans from "@/components/globals/buttons";
 import Offer from "@/components/navbar/offer";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -8,16 +9,17 @@ export default function Home() {
         <Offer />
         <div id="page" className=" max-w-screen-2xl mx-auto space-y-5">
           <section className="relative mt-5 ">
-            <picture className=" hidden md:block">
+            <picture className=" hidden md:block min-h-[650px]">
               {/* <source media="(max-width:750px)" srcSet="/assets/landing.webp" /> */}
               <source
                 media="(max-width:765px)"
                 srcSet="/assets/landing-bg.-sm.jpg"
               />
-              <img
+              <Image
+                fill={true}
                 alt="landing image"
+                className="object-cover"
                 src="/assets/landing.webp"
-                className=" object-center "
               />
             </picture>
             <video
@@ -26,6 +28,7 @@ export default function Home() {
               autoPlay
               preload="auto"
               playsInline
+              poster="/assets/poster-video.jpg"
               className=" block md:hidden"
             >
               <source src="assets/landing-video-sm.mp4" type="video/mp4" />

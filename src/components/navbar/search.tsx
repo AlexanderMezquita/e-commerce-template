@@ -9,7 +9,7 @@ const Search = () => {
     <>
       <i className="fi fi-rs-search" onClick={() => setOpenBar(true)}></i>
       <SearchMenu open={openBar} toggle={setOpenBar} />
-      <BackDrop open={openBar} toggleBar={setOpenBar} />
+      <BackDrop open={openBar} toggle={setOpenBar} />
     </>
   );
 };

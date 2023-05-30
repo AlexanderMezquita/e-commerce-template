@@ -10,9 +10,9 @@ input[type="search"]::-webkit-search-results-button,
 input[type="search"]::-webkit-search-results-decoration {
   -webkit-appearance: none;
 }
-::-webkit-scrollbar {
+/* ::-webkit-scrollbar {
   display: none;
-}
+} */
 
 .garamond {
   font-family: "EB Garamond", serif;
@@ -35,7 +35,7 @@ main {
 }
 
 i {
-     @apply text-xl flex items-center cursor-pointer p-3 hover:text-primary/70
+     @apply text-xl flex items-center cursor-pointer p-3 hover:text-primary/60 
 }
 
 button {
@@ -85,7 +85,7 @@ a {
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 250px) {
      #sideBarContent {
          width: 100%;
      }
