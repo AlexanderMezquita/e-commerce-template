@@ -1,3 +1,3 @@
 export default function Men() {
-  return <h1>Men's page</h1>;
+  return <h1>Mens page</h1>;
 }
