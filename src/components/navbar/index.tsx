@@ -21,7 +21,7 @@ const NavBar = () => {
         className=" sticky top-0 bg-white w-full z-10  "
       >
         <ul className="flex justify-between items-center navBar max-w-screen-2xl h-16 mx-auto md:pl-4">
-          <div className=" md:hidden flex items-center h-full space-x-5 flex-grow basis-0">
+          <div className=" rounded-r md:hidden flex items-center h-full space-x-5 flex-grow basis-0">
             <li>
               <Burguer />
             </li>

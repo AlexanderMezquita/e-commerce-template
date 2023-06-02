@@ -9,7 +9,7 @@ const SearchInput = () => {
         </div>
         <input
           type="search"
-          className=" w-full p-4 pl-10 text-sm text-gray-900 border focus:border-gray-400 border-gray-700 rounded-md  "
+          className=" w-full p-4 pl-10  text-sm text-gray-900 border focus:border-gray-400 border-gray-700 rounded-md  "
           placeholder="Search Products, Colors..."
           required
         />

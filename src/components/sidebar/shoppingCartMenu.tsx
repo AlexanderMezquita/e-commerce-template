@@ -1,3 +1,4 @@
+import { ButtonBlue } from "../globals/buttons";
 import SideBar from "./sidebar";
 import { FC } from "react";
 
@@ -28,8 +29,7 @@ const ShoppingCartMenu: FC<CartMenuProps> = ({ open, toggle }) => {
       <footer className="p-5 bottom-0 w-full absolute bg-background">
         <h1>Subtotal</h1>
         <hr className="my-5"></hr>
-
-        <button className=" p-4 w-full text-white">view bag</button>
+        <ButtonBlue link="view bag" />
       </footer>
     </SideBar>
   );

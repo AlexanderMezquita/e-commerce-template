@@ -14,7 +14,7 @@ const NavHeader = () => {
             </li>
           </ul>
           <li className="mr-5 md:flex hidden items-center font-bold text-sm space-x-2 cursor-pointer hover:text-primary/70 ">
-            <i className="fi fi-rs-circle-user text-sm"></i>
+            <i className="fi fi-rs-circle-user text-md"></i>
             <p>Sign in or Create Account</p>
           </li>
         </ul>

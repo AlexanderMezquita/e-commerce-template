@@ -1,4 +1,4 @@
-import ButtonTrans from "@/components/globals/buttons";
+import { ButtonTrans } from "@/components/globals/buttons";
 import Offer from "@/components/navbar/offer";
 import Image from "next/image";
 
