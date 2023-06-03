@@ -12,6 +12,6 @@ export async function GetSubcategories(category: string) {
 }
 
 export async function GetProducts() {
-    const products = await prisma.products.findMany({ take: 2 });
+    const products = await prisma.products.findMany({ include: { images: true } });
     return products;
 }
