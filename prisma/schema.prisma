@@ -1,0 +1,53 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url = env("POSTGRES_PRISMA_URL") // uses connection pooling
+  directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
+  shadowDatabaseUrl = env("POSTGRES_URL_NON_POOLING") // used for migrations
+}
+
+model categories {
+  id String @id
+  name String
+  description String
+  products products[]
+  subcategories subcategories[]
+  createdAt  DateTime @default(now())
+}
+
+model subcategories{
+  id String @id
+  name String
+  description String
+  products products[]
+  categories categories[]
+  createdAt  DateTime @default(now())
+  
+}
+
+model images {
+  id String @id
+  name String
+  description String
+  url String
+  productId String
+  product products @relation(fields: [productId],references: [id])
+  createdAt DateTime @default(now())
+}
+
+model products {
+  id String @id
+  name String 
+  images images[]
+  categoryId String
+  subcategoryId String
+  category categories @relation(fields: [categoryId],references: [id])
+  subcategory subcategories @relation(fields: [subcategoryId],references: [id])
+  createdAt DateTime @default(now())
+}
