@@ -40,10 +40,10 @@ const BurgerMenu: FC<BurgerMenuProps> = ({ open, toggle }) => {
       </div>
       <hr className="my-5"></hr>
 
-      <ul className="flex divide-x-2 [&>li]:px-4 [&>li>a]:text-[11px] [&>li>a]:underline [&>li>a]:text-neutral-400 pb-5 px-5">
+      <ul className="flex items-center divide-x-2 [&>li]:px-4 [&>li>a]:text-[11px] [&>li>a]:underline [&>li>a]:text-neutral-400 pb-5 px-5">
         <li className="flex items-center space-x-4">
           <img alt="canada flag" src="assets/canada.svg" className="w-6" />
-          <a>Canada</a>
+          <a className="hover:text-primary">Canada</a>
         </li>
         <li>
           <a className="hover:text-primary">Change</a>
