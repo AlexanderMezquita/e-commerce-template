@@ -13,7 +13,7 @@ datasource db {
 }
 
 model categories {
-  id String @id
+  id String @id @default(uuid())
   name String
   description String
   products products[]
@@ -22,17 +22,18 @@ model categories {
 }
 
 model subcategories{
-  id String @id
+  id String @id @default(uuid())
   name String
   description String
   products products[]
-  categories categories[]
+  category categories @relation(fields: [categoryId],references: [id])
+  categoryId String
   createdAt  DateTime @default(now())
   
 }
 
 model images {
-  id String @id
+  id String @id @default(uuid())
   name String
   description String
   url String
@@ -42,8 +43,9 @@ model images {
 }
 
 model products {
-  id String @id
+  id String @id @default(uuid())
   name String 
+  description String
   images images[]
   categoryId String
   subcategoryId String
