@@ -10,13 +10,13 @@ export default async function Shop() {
     <main>
       <Offer />
       <div className="main-container grid grid-cols-12">
-        <aside className="md:block md:col-span-4 hidden">
+        <aside className="md:block md:col-span-2 hidden">
           {/* @ts-expect-error Server Component */}
           <Subcategories category="d527da3e-a843-4df9-8017-8de53842a6d6" />
         </aside>
-        <section className="col-span-8">
+        <section className="col-span-8 grid grid-cols-4">
           {products.map((product) => (
-            <ProductItem key={product.id} product={product} />
+            <ProductItem product={product} />
           ))}
         </section>
       </div>

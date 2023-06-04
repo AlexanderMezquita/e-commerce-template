@@ -7,18 +7,8 @@ import Image from "next/image";
 
 export default function ProductItem({ product }: { product: products }) {
   return (
-    <div>
-      {/* <source srcSet= /> */}
-      <picture className="max-h-96">
-        <Image
-          // fill={true}
-          width={320}
-          height={300}
-          alt="landing image"
-          // className="object-cover"
-          src={product.images[0].url}
-        />
-      </picture>
-    </div>
+    <picture>
+      <Image width={80} height={80} alt="landing image" src={"/"} />
+    </picture>
   );
 }
