@@ -1,23 +1,23 @@
 import React, { FC } from "react";
 import SearchInput from "../globals/searchInput";
-import RightSideBar from "./rightSidebar";
+import SideBar from "./sidebar";
 
 type SearchMenuProps = {
-  openRightBar: boolean;
-  toggleRightBar: Function;
+  open: boolean;
+  toggle: Function;
 };
 
-const SearchMenu: FC<SearchMenuProps> = ({ openRightBar, toggleRightBar }) => {
+const SearchMenu: FC<SearchMenuProps> = ({ open, toggle }) => {
   return (
-    <RightSideBar open={openRightBar}>
-      <div className="bg-background flex p-5 justify-between items-center mb-5">
+    <SideBar open={open} position={"right-0 "} translate="translate-x-full">
+      <header className="bg-background flex p-5 justify-between items-center mb-5">
         <h3>Search</h3>
 
         <i
           className="fi fi-rs-cross text-sm "
-          onClick={() => toggleRightBar()}
+          onClick={() => toggle(false)}
         ></i>
-      </div>
+      </header>
       <SearchInput />
       <div className=" p-5">
         <h1 className="mb-4 font-bold">Popular searches</h1>
@@ -29,7 +29,7 @@ const SearchMenu: FC<SearchMenuProps> = ({ openRightBar, toggleRightBar }) => {
           <li>Golf</li>
         </ul>
       </div>
-    </RightSideBar>
+    </SideBar>
   );
 };
 
