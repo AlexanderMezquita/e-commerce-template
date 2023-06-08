@@ -2,6 +2,7 @@ import "./globals.css";
 import "@flaticon/flaticon-uicons/css/all/all.css";
 import NavBar from "@/components/navbar";
 import Footer from "@/components/footer";
+import { Analytics } from "@vercel/analytics/react";
 
 export const metadata = {
   title: "Abercrombie & Fitch ",
@@ -22,7 +23,7 @@ export default function RootLayout({
         <NavBar />
         {children}
         <Footer />
-        </body>
+      </body>
     </html>
   );
 }

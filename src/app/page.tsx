@@ -1,8 +1,12 @@
 import { ButtonTrans } from "@/components/globals/buttons";
 import Offer from "@/components/navbar/offer";
 import Image from "next/image";
+import { createProductAsyn } from "../../prisma/seedData";
+import Link from "next/link";
 
-export default function Home() {
+export default async function Home() {
+  // await createProductAsyn();
+
   return (
     <main>
       <Offer />
@@ -14,6 +18,7 @@ export default function Home() {
               media="(max-width:765px)"
               srcSet="/assets/landing-bg.-sm.jpg"
             />
+
             <Image
               fill={true}
               alt="landing image"

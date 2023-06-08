@@ -9,6 +9,7 @@ import Search from "./search";
 import Burguer from "./burguer";
 import ShoppingCart from "./shoppingCart";
 import Image from "next/image";
+import Link from "next/link";
 
 const NavBar = () => {
   const [categorySelected, setCategorySelected] = useState("none");
@@ -28,15 +29,17 @@ const NavBar = () => {
           </div>
           <div className=" flex items-center">
             <li className="w-40 md:w-48 h-10 relative">
-              <Image
-                // className="w-40 md:w-48"
-                // width={300}
-                // height={150}
-                fill={true}
-                alt="logo"
-                src="/logo.png"
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              />
+              <Link href={"/"}>
+                <Image
+                  // className="w-40 md:w-48"
+                  // width={300}
+                  // height={150}
+                  fill={true}
+                  alt="logo"
+                  src="/logo.png"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                />
+              </Link>
             </li>
             {categories.map((item) => {
               return (
@@ -47,7 +50,8 @@ const NavBar = () => {
                   className="relative hidden px-5 md:block"
                   id={`${item.name}`}
                 >
-                  <a>{item.name}</a>
+                  <Link href={"/shop"}>{item.name}</Link>
+
                   <PopOver
                     categoryToOpen={item.name}
                     categorySelected={categorySelected}

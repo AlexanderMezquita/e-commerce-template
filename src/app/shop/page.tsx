@@ -16,7 +16,9 @@ export default async function Shop() {
 
         <section>
           {products.map((product) => (
-            <>{product.name}</>
+            <ul key={product.name}>
+              <li>{product.name}</li>
+            </ul>
           ))}
         </section>
       </div>
