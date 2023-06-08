@@ -1,4 +1,5 @@
 import Offer from "@/components/navbar/offer";
+import ProductItem from "@/components/shop/product-item";
 import Subcategories from "@/components/shop/subcategories";
 import { GetProducts } from "./actions";
 
@@ -9,16 +10,19 @@ export default async function Shop() {
     <main>
       <Offer />
       <div className="main-container grid grid-cols-12">
-        <aside className="md:block md:col-span-4 hidden">
+        <aside className="md:block md:col-span-2 hidden">
           {/* @ts-expect-error Server Component */}
           <Subcategories category="d527da3e-a843-4df9-8017-8de53842a6d6" />
         </aside>
-
-        <section>
+        <section className="col-span-8 grid grid-cols-4">
           {products.map((product) => (
+<<<<<<< HEAD
             <ul key={product.name}>
               <li>{product.name}</li>
             </ul>
+=======
+            <ProductItem key={product.id} product={product} />
+>>>>>>> efaffa6bc6dfb0895e3d998b70ca8b2b268f4777
           ))}
         </section>
       </div>
