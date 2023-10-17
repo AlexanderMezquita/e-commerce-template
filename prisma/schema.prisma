@@ -1,53 +1,50 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
 generator client {
   provider = "prisma-client-js"
 }
 
 datasource db {
-  provider = "postgresql"
-  url = env("POSTGRES_PRISMA_URL") // uses connection pooling
-  directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
-  shadowDatabaseUrl = env("POSTGRES_URL_NON_POOLING") // used for migrations
+  provider          = "postgresql"
+  url               = env("POSTGRES_PRISMA_URL")
+  directUrl         = env("POSTGRES_URL_NON_POOLING")
 }
 
 model categories {
-  id String @id
-  name String
-  description String
-  products products[]
+  id            String          @id @default(uuid())
+  name          String
+  description   String
+  createdAt     DateTime        @default(now())
+  products      products[]
   subcategories subcategories[]
-  createdAt  DateTime @default(now())
 }
 
-model subcategories{
-  id String @id
-  name String
+model subcategories {
+  id          String     @id @default(uuid())
+  name        String
   description String
-  products products[]
-  categories categories[]
-  createdAt  DateTime @default(now())
-  
+  createdAt   DateTime   @default(now())
+  categoryId  String
+  products    products[]
+  category    categories @relation(fields: [categoryId], references: [id])
 }
 
 model images {
-  id String @id
-  name String
+  id          String   @id @default(uuid())
+  name        String
   description String
-  url String
-  productId String
-  product products @relation(fields: [productId],references: [id])
-  createdAt DateTime @default(now())
+  url         String
+  productId   String
+  createdAt   DateTime @default(now())
+  product     products @relation(fields: [productId], references: [id])
 }
 
 model products {
-  id String @id
-  name String 
-  images images[]
-  categoryId String
+  id            String        @id @default(uuid())
+  name          String
+  categoryId    String
+  createdAt     DateTime      @default(now())
   subcategoryId String
-  category categories @relation(fields: [categoryId],references: [id])
-  subcategory subcategories @relation(fields: [subcategoryId],references: [id])
-  createdAt DateTime @default(now())
+  description   String
+  images        images[]
+  category      categories    @relation(fields: [categoryId], references: [id])
+  subcategory   subcategories @relation(fields: [subcategoryId], references: [id])
 }

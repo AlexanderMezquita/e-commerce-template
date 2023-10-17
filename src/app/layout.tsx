@@ -1,14 +1,15 @@
 import "./globals.css";
 import "@flaticon/flaticon-uicons/css/all/all.css";
-
-import { Inter } from "next/font/google";
-import "@flaticon/flaticon-uicons/css/all/all.css";
-
-const inter = Inter({ subsets: ["latin"] });
+import NavBar from "@/components/navbar";
+import Footer from "@/components/footer";
+import { Analytics } from "@vercel/analytics/react";
 
 export const metadata = {
   title: "Abercrombie & Fitch ",
   description: "Abercrombie & Fitch template by Alex and Alam",
+  icons: {
+    icon: "./meta-logo.png",
+  },
 };
 
 export default function RootLayout({
@@ -18,9 +19,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <span>MMG</span>
+      <body>
+        <NavBar />
         {children}
+        <Analytics />
+        <Footer />
       </body>
     </html>
   );

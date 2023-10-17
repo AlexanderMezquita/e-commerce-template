@@ -1,11 +1,13 @@
 import React, { ReactNode, useEffect } from "react";
 import { FC } from "react";
-type LeftSidebarProps = {
+type SidebarProps = {
+  translate: string;
+  position: string;
   open: boolean;
   children: ReactNode;
 };
 
-const LeftSideBar: FC<LeftSidebarProps> = ({ open, children }) => {
+const SideBar: FC<SidebarProps> = ({ open, translate, position, children }) => {
   useEffect(() => {
     if (open) {
       document.body.style.overflow = "hidden";
@@ -15,15 +17,15 @@ const LeftSideBar: FC<LeftSidebarProps> = ({ open, children }) => {
   }, [open]);
 
   return (
-    <div
+    <aside
       className={`${
-        open ? "" : " -translate-x-full"
-      } z-20 fixed bg-white top-0 left-0 bottom-0 w-80  transition-all duration-300 overflow-y-auto `}
+        open ? "" : translate
+      } z-20 fixed bg-white ${position} top-0  bottom-0 w-[300px] md:w-[400px] transition-all duration-300 overflow-y-auto `}
       id="sideBarContent"
     >
       {children}
-    </div>
+    </aside>
   );
 };
 
-export default LeftSideBar;
+export default SideBar;

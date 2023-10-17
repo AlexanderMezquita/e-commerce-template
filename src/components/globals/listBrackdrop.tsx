@@ -9,7 +9,7 @@ const ListBackDrop: FC<ListBackDropProps> = ({ open }) => {
     <>
       <div
         className={`${
-          open !== "none" ? " opacity-100  " : " opacity-0 -z-10 "
+          open !== "none" ? " opacity-100  " : " opacity-0 hidden "
         } absolute left-0 w-full h-screen  bg-black bg-opacity-50 transition-all duration-300`}
       ></div>
     </>
